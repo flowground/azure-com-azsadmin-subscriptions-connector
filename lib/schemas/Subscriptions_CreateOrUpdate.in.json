@@ -1,0 +1,56 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "List of supported operations.",
+            "properties": {
+                "displayName": {
+                    "description": "Subscription name.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Fully qualified identifier.",
+                    "type": "string"
+                },
+                "offerId": {
+                    "description": "Identifier of the offer under the scope of a delegated provider.",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "Subscription state.",
+                    "enum": [
+                        "NotDefined",
+                        "Enabled",
+                        "Warned",
+                        "PastDue",
+                        "Disabled",
+                        "Deleted"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "SubscriptionState"
+                    }
+                },
+                "subscriptionId": {
+                    "description": "Subscription identifier.",
+                    "type": "string"
+                },
+                "tenantId": {
+                    "description": "Directory tenant identifier.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "default": "2015-11-01"
+        }
+    }
+}
